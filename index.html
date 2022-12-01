@@ -1,0 +1,2848 @@
+<!doctype html>
+                        <html>
+                            <head>
+                                <meta charset='utf-8'>
+                                <meta name='viewport' content='width=device-width, initial-scale=1'>
+                                <title>Cooperx - Formulario</title>
+                                <link href='#' rel='stylesheet'>
+                                <link rel="stylesheet" href="node_modules/jquery-mask-plugin/dist/jquery.mask.js">
+                                <link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css' rel='stylesheet'>
+                                <link rel="stylesheet" href="js/bootstrap.js">
+                                <link rel="stylesheet" href="css/bootstrap.css">
+                                <link rel="stylesheet" href="js/cep.js">
+                                <script type='text/javascript' src='#'></script>
+                                <style>::-webkit-scrollbar {
+                                  width: 8px;
+                                }
+                                /* Track */
+                                ::-webkit-scrollbar-track {
+                                  background: #f1f1f1; 
+                                }
+                                 
+                                /* Handle */
+                                ::-webkit-scrollbar-thumb {
+                                  background: #888; 
+                                }
+                                
+                                /* Handle on hover */
+                                ::-webkit-scrollbar-thumb:hover {
+                                  background: #555; 
+                                } @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
+
+*{
+    padding:0;
+    margin:0;
+}
+.container{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background-color:#eee;
+}
+.container .card{
+    height:750px;
+    width:1100px;
+    background-color:#fff;
+    position:relative;
+    box-shadow:0 15px 30px rgba(0,0,0,0.1);
+    font-family: 'Poppins', sans-serif;
+    border-radius:20px;
+}
+.container .card .form{
+    width:100%;
+    height:100%;
+    
+    display:flex;
+}
+.container .card .left-side{
+    width:35%;
+    background-color:#304767;
+    height:100%;
+ border-top-left-radius:20px;
+ border-bottom-left-radius:20px;
+  padding:20px 30px;
+  box-sizing:border-box;
+
+}
+/*left-side-start*/
+.left-heading{
+    margin-top:30px;
+    color:#fff;
+}
+.steps-content{
+    margin-top:30px;
+    color:#fff;
+}
+.steps-content p{
+    font-size:12px;
+    margin-top:15px;
+}
+.progress-bar{
+    list-style:none;
+    /*color:#fff;*/
+    margin-top:30px;
+    font-size:13px;
+    font-weight:700;
+    counter-reset:container 0;
+}
+.progress-bar li{
+       position:relative;
+       margin-left:40px;
+       margin-top:50px;
+       counter-increment:container 1;
+      color:#4f6581;
+}
+.progress-bar li::before{
+    content:counter(container);
+    line-height:25px;
+    text-align:center;
+    position:absolute;
+    height:25px;
+    width:25px;
+    border:1px solid #4f6581;
+    border-radius:50%;
+    left:-40px;
+    top:-5px;
+    z-index:10;
+    background-color:#304767;
+
+     
+}
+
+
+.progress-bar li::after{
+    content: '';
+    position: absolute;
+    height: 90px;
+    width: 2px;
+    background-color: #4f6581;
+    z-index: 1;
+    left: -27px;
+    top: -70px;
+}
+
+
+.progress-bar li.active::after{
+    background-color: #fff;
+
+}
+
+.progress-bar li:first-child:after{
+  display:none;  
+}
+
+/*.progress-bar li:last-child:after{*/
+/*  display:none;  */
+/*}*/
+.progress-bar li.active::before{
+    color:#fff;
+      border:1px solid #fff;
+}
+.progress-bar li.active{
+    color:#fff;
+}
+.d-none{
+   display:none;   
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*left-side-end*/
+.container .card .right-side{
+    width:65%;
+    background-color:#fff;
+    height:100%;
+  border-radius:20px;
+}
+/*right-side-start*/
+.main{
+    display:none;
+}
+.active{
+    display:block;
+}
+.main{
+    padding:40px;
+}
+.main small{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    width:220px;
+    background-repeat: no-repeat;
+}
+.main small span img{
+    width:100%;
+    height:100%;
+}
+.text{
+    margin-top:40px;
+}
+.congrats{
+    text-align:center;
+}
+.text p{
+    margin-top:10px;
+    font-size:13px;
+    font-weight:700;
+    color:#c0c3c9;
+}
+.first-text{
+    margin-top:40px;
+}
+.first-text p{
+    margin-top:30px;
+    font-size:16px;
+}
+.input-text{
+    margin:30px 0;
+    display:flex;
+    gap:20px;
+    
+}
+
+.input-text .input-div{
+    width:100%;
+    position:relative;
+    
+}
+
+
+
+input[type="text"]{
+    width:100%;
+    height:40px;
+    border:none;
+    outline:0;
+    border-radius:5px;
+    border:1px solid #cbced4;
+    gap:20px;
+    box-sizing:border-box;
+    padding:0px 10px;
+}
+select{
+    width:100%;
+    height:40px;
+    border:none;
+    outline:0;
+    border-radius:5px;
+    border:1px solid #cbced4;
+    gap:20px;
+    box-sizing:border-box;
+    padding:0px 10px;
+}
+.input-text .input-div span{
+    position:absolute;
+    top:10px;
+    left:10px;
+    font-size:14px;
+    transition:all 0.5s;
+}
+.input-div input:focus ~ span,.input-div input:valid ~ span  {
+    top:-15px;
+    left:6px;
+    font-size:10px;
+    font-weight:600; 
+}
+
+.input-div span{
+    top:-15px;
+    left:6px;
+    font-size:10px;
+    pointer-events: none
+}
+.buttons button{
+    height:40px;
+    width:100px;
+    border:none;
+    border-radius:5px;
+    background-color:#0075ff;
+    font-size:12px;
+    color:#fff;
+    cursor:pointer;
+    margin-top:30px;
+
+}
+.button_space{
+    display:flex;
+    gap:20px;
+    
+}
+.button_space button:nth-child(1){
+    background-color:#fff;
+    color:#000;
+    border:1px solid#000;
+}
+.user_card{
+    margin-top:20px;
+    margin-bottom:40px;
+    height:200px;
+    width:100%;
+    border:1px solid #c7d3d9;
+    border-radius:10px;
+    display:flex;
+    overflow:hidden;
+    position:relative;
+    box-sizing:border-box;
+}
+.user_card span{
+    height:80px;
+    width:100%;
+    background-color:#dfeeff;
+}
+.circle{
+    position:absolute;
+    top:40px;
+    left:60px;
+}
+.circle span{
+    height:70px;
+    width:70px;
+    background-color:#fff;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    border:2px solid #fff;
+    border-radius:50%;
+}
+.circle span img{
+    width:100%;
+    height:100%;
+    border-radius:50%;
+    object-fit:cover;
+}
+.social{
+    display:flex;
+    position:absolute;
+    top:100px;
+    right:10px;
+}
+.social span{
+    height:30px;
+    width:30px;
+    border-radius:7px;
+    background-color:#fff;
+    border:1px solid #cbd6dc;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin-left:10px;
+    color:#cbd6dc;
+
+}
+.social span i{
+        cursor:pointer;
+}
+.heart{
+    color:red !important;
+}
+.share{
+        color:red !important;
+}
+.user_name{
+    position:absolute;
+    top:110px;
+    margin:10px;
+    padding:0 30px;
+    display:flex;
+    flex-direction:column;
+    width:100%;
+    
+} 
+.user_name h3{
+    color:#4c5b68;
+}
+.detail{
+    /*margin-top:10px;*/
+   display:flex;
+   justify-content:space-between;
+   margin-right:50px;
+}
+.detail p{
+    font-size:12px;
+    font-weight:700;
+
+}
+.detail p a{
+    text-decoration:none;
+    color:blue;
+}
+
+
+
+
+
+
+.checkmark__circle {
+  stroke-dasharray: 166;
+  stroke-dashoffset: 166;
+  stroke-width: 2;
+  stroke-miterlimit: 10;
+  stroke: #7ac142;
+  fill: none;
+  animation: stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards;
+}
+
+.checkmark {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  display: block;
+  stroke-width: 2;
+  stroke: #fff;
+  stroke-miterlimit: 10;
+  margin: 10% auto;
+  box-shadow: inset 0px 0px 0px #7ac142;
+  animation: fill .4s ease-in-out .4s forwards, scale .3s ease-in-out .9s both;
+}
+
+.checkmark__check {
+  transform-origin: 50% 50%;
+  stroke-dasharray: 48;
+  stroke-dashoffset: 48;
+  animation: stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.8s forwards;
+}
+
+@keyframes stroke {
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes scale {
+  0%, 100% {
+    transform: none;
+  }
+  50% {
+    transform: scale3d(1.1, 1.1, 1);
+  }
+}
+@keyframes fill {
+  100% {
+    box-shadow: inset 0px 0px 0px 30px #7ac142;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+.warning{
+    border:1px solid red !important;
+}
+
+
+/*right-side-end*/
+@media (max-width:750px) {
+    .container{
+        height:scroll;
+       
+        
+    }
+    .container .card {
+        max-width: 350px;
+        height:auto !important;
+        margin:30px 0;
+    }
+    .container .card .right-side {
+     width:100%;
+            
+    }
+     .input-text{
+         display:block;
+     }
+     
+     .input-text .input-div{
+  margin-top:20px;
+    
+}
+
+    .container .card .left-side {
+           
+     display: none;
+    }
+}</style>
+                                </head>
+                                <body className='snippet-body'>
+                                <div class="container">
+    <div class="card">
+        <div class="form">
+            <div class="left-side">
+                <div class="left-heading">
+                    <h2>Cadastro de Cooperado</h2>
+                </div>
+                <div class="steps-content">
+                    <h3>Etapa <span class="step-number">1</span></h3>
+                    <p class="step-number-content active">Insira suas informações para continuar.</p>
+                    <p class="step-number-content d-none">Anexe os documentos exigidos para prosseguir com o cadastro.</p>
+                    <p class="step-number-content d-none">Escolha as opções que condizem com o seu perfil de trabalho.</p>
+                    <p class="step-number-content d-none">Responda a pesquisa de skills para concluir o seu registro.</p>
+                </div>
+                <ul class="progress-bar">
+                    <li class="active">Informações Pessoais</li>
+                    <li>Documentos</li>
+                    <li>Perfil de Trabalho</li>
+                    <li>Pesquisa de Skills</li>
+                </ul>
+                
+
+                
+            </div>
+            <div class="right-side">
+
+                <!-- Pagina 1 -->
+
+                <div class="main active">
+                    <small><span><img src="https://cooperx.coop.br/wp-content/uploads/2020/04/logo2020_png.png"></span></small>
+                    <div class="first-text">
+                        <h2>Formulário de Ingresso COOPERX</h2>
+                        <p>Seja-bem vindo! Este é o primeiro passo para o início do processo de ingresso à COOPERX, que nos permitirá enviar ao e-mail informado no cadastro todas as informações e documentações necessárias relacionadas ao seu ingresso. Dúvidas entrar em contato com talentos@cooperx.com.br
+                        <br><br>IMPORTANTE: Este formulário é para uso EXCLUSIVO de profissionais e empresas previamente selecionados para o ingresso a COOPERX, Cooperativa de Trabalho.</p>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-div">
+                          <div class="col-68">
+                          <label for="categoria" class="form-label"></label>
+                          <select id="categoria" class="form-select">
+                            <option selected value="0">Selecione sua categoria</option>
+                            <option value="1">Pessoa Juridica</option>
+                            <option value="2">Pessoa Fisica</option>
+                          </select>
+                        </div>    
+                      </div>
+                      </div>
+                        
+                    <div class="buttons">
+                        <button class="next_button">Próximo</button>
+                    </div>
+                </div>
+
+                <!-- Pagina 2 -->
+                
+                <div class="main">
+                    <small><span><img src="https://cooperx.coop.br/wp-content/uploads/2020/04/logo2020_png.png"></span></small>
+                    <div class="text">
+                        <h2>Dados da Empresa</h2>
+                        <p>Preencha os campos para continuar.</p>
+                    </div>
+                    <div class="input-text">
+                        <div class="input-div">
+                            <input type="text" required require>
+                            <span>Nome da Empresa / Fantasia</span>
+                        </div>
+                        <div class="input-div"> 
+                            <input type="text" required require>
+                            <span>Razão Social</span>
+                        </div>
+                    </div>
+                    <div class="input-text">
+                        <div class="input-div">
+                            <input type="text" onfocus="javascript: retirarFormatacao(this);" onblur="javascript: formatarCampo(this);" maxlength="14"  required require>
+                            <span>CNPJ</span>
+                        </div>
+                        <div class="input-div"> 
+                            <input type="text" required require>
+                            <span>Incrição Estadual</span>
+                        </div>
+                    </div>
+                    <div class="input-text">
+                        <div class="input-div">
+                            <input type="text" required require>
+                            <span>Inscrição Municipal</span>
+                        </div>
+
+                    </div>
+                    <div class="buttons button_space">
+                        <button class="back_button">Anterior</button>
+                        <button class="next_button">Próximo</button>
+                    </div>
+                </div>
+
+                 <!-- Pagina 3 -->
+                 
+                <div class="main">
+                    <small><span><img src="https://cooperx.coop.br/wp-content/uploads/2020/04/logo2020_png.png"></span></small>
+                    <div class="text">
+                        <h2>Endereço</h2>
+                        <p>Insira o seu endereço nos campos solicitados para continuar.</p>
+                    </div>
+                    <div class="input-text">
+                        <div class="input-div"> 
+                            <input type="text" name="cep" id="cep" value="" size="10" maxlength="9"
+                            onblur="pesquisacep(this.value);" required require>
+                            <span>CEP</span>
+                        </div>
+                        <div class="input-div">
+                            <input type="text" name="rua"  id="rua" size="60" required require>
+                            <span>Endereço - Rua</span>
+                        </div>
+                    </div>
+                    <div class="input-text">
+                        <div class="input-div">
+                            <input type="text" name="bairro"  id="bairro" size="40"  required require>
+                            <span>Bairro</span>
+                        </div>
+                        <div class="input-div">
+                            <input type="text" name="cidade" id="cidade" size="40" required require>
+                            <span>Cidade</span>
+                        </div>
+                    </div>
+                    <div class="input-text">
+                        <div class="input-div">
+                            <select class="form-select" aria-label="Default select example">
+                                <option selected>UF</option>
+                                  <option>DF</option>
+                                  <option>RJ</option>
+                                  <option>SP</option>
+                                  <option>RN</option>
+                                  <option>BA</option>
+                                  <option>BH</option>
+                                  <option>RO</option>
+                                  <option>AC</option>
+                                  <option>AM</option>
+                                  <option>CE</option>
+                                  <option>PB</option>
+                                  <option>PE</option>
+                                  <option>AL</option>
+                                  <option>MG</option>
+                                  <option>SC</option>
+                                  <option>GO</option>
+                                  <option>AP</option>
+                                  <option>PI</option>
+                                  <option>SE</option>
+                                  <OPtion>MG</OPtion>
+                                  <option>ES</option>
+                                  <option>PR</option>
+                                  <option>SC</option>
+                                  <option>MT</option>
+                                  <option>RS</option>
+                                  <option>TO</option>
+                                </select>
+                        </div>
+                        <div class="input-div">
+                            <input type="text" required require>
+                            <span>Complemento</span>
+                        </div>
+                    </div>
+                    <div class="input-text">
+                        <div class="input-div">
+                            <input type="text" id="phone" name="phone" onkeypress="mask(this, mphone);" onblur="mask(this, mphone);" required require>
+                            <span>Telefone</span>
+                        </div>
+                        <div class="input-div"> 
+                            <input type="text" required require>
+                            <span>E-mail principal</span>
+                        </div>
+                    </div>
+                    <div class="input-text">
+                        <div class="input-div">
+                            <input type="text" required>
+                            <span>E-mail Secundario</span>
+                        </div>
+                    </div>
+                    <div class="buttons button_space">
+                        <button class="back_button">Anterior</button>
+                        <button class="next_button">Próximo</button>
+                    </div>
+                </div>
+                
+                <!-- Pagina 4 (Responsavel 1) -->
+
+                <div class="main"; style="overflow-y: scroll; height:750px;">
+                    <small><span><img src="https://cooperx.coop.br/wp-content/uploads/2020/04/logo2020_png.png"></span></small>
+                    <div class="text">
+                        <h2>Responsavel Legal</h2>
+                        <p>Preencha de forma completa as Abas.</p>
+                    </div>
+                    <div class="input-text">
+                        <div class="input-div">
+                            <input type="text" required require id="user_name">
+                            <span>Nome Completo</span>
+                        </div>
+                        <div class="input-div"> 
+                            <input type="text" oninput="mascara(this)" required require>
+                            <span>CPF</span>
+                        </div>
+                    </div>
+                    <div class="input-text">
+                        <div class="input-div">
+                            <input type="text" maxlength="16" required require>
+                            <span>RG</span>
+                        </div>
+                        <div class="input-div">
+                            <input type="text" required require>
+                            <span>Orgão Emissor</span>
+                        </div>
+                    </div>
+
+                    <div class="input-text">
+                        <div class="input-div">
+                            <input type="text" name="cep" id="cep" value="" size="10" maxlength="9" onblur="pesquisacep(this.value);" required require>
+                            <span>CEP</span>
+                        </div>
+                        <div class="input-div">
+                            <input type="text" name="rua" type="text" id="rua" size="60"  required require>
+                            <span>Endereço - Rua </span>
+                        </div>
+                    </div>
+                    <div class="input-text">
+                        <div class="input-div">
+                            <input type="text" name="bairro" type="text" id="bairro" size="40"  required require>
+                            <span>Bairro</span>
+                        </div>
+                        <div class="input-div">
+                            <input type="text" name="cidade" id="cidade" size="40" required require>
+                            <span>Cidade</span>
+                        </div>
+                    </div>
+                    <div class="input-text">
+                        <div class="input-div">
+                            <select class="form-select" aria-label="Default select example">
+                                <option selected name="uf" id="uf" size="2">UF</option>
+                                    <option>DF</option>
+                                    <option>RJ</option>
+                                    <option>SP</option>
+                                    <option>RN</option>
+                                    <option>BA</option>
+                                    <option>BH</option>
+                                    <option>RO</option>
+                                    <option>AC</option>
+                                    <option>AM</option>
+                                    <option>CE</option>
+                                    <option>PB</option>
+                                    <option>PE</option>
+                                    <option>AL</option>
+                                    <option>MG</option>
+                                    <option>SC</option>
+                                    <option>GO</option>
+                                    <option>AP</option>
+                                    <option>PI</option>
+                                    <option>SE</option>
+                                    <OPtion>MG</OPtion>
+                                    <option>ES</option>
+                                    <option>PR</option>
+                                    <option>SC</option>
+                                    <option>MT</option>
+                                    <option>RS</option>
+                                    <option>TO</option>
+                                </select>
+                        </div>
+                        <div class="input-div">
+                            <input type="text" required require>
+                            <span>Complemento</span>
+                        </div>
+                        
+                    </div>
+                    <div class="input-text">
+                        <div class="input-div"> 
+                            <input type="text" required require>
+                            <span>E-mail do Responsavel Legal</span>
+                        </div>
+                        <div class="input-div"> 
+                            <input type="text" required>
+                            <span>E-mail Alternativo</span>
+                        </div>
+                    </div>
+                    <div class="input-text">
+                        <div class="input-div">
+                            <input type="text"  id="phone" name="phone" onkeypress="mask(this, mphone);" onblur="mask(this, mphone);" required require>
+                            <span>Telefone do Responsavel Legal</span>
+                        </div>
+                        <div class="input-div">
+                            <input type="text" name="outra_data" id="outra_data" maxlength="10" onkeypress="mascaraData(this)" required require>
+                            <span>Data de Nascimento</span>
+                        </div>
+                    </div>
+                    <div class="input-text">
+                        <div class="input-div">
+                            <input type="text" required>
+                            <span>Observação</span>
+                        </div>
+                    </div>
+                    <div class="buttons button_space">
+                        <button class="back_button">Anterior</button>
+                        <button class="next_button">Próximo</button>
+                    </div>
+                    
+    
+                </div>
+                        
+
+                <!-- Pagina 5 (Responsavel 2) -->
+
+                <div class="main"; style="overflow-y: scroll; height:750px;">
+                    <small><span><img src="https://cooperx.coop.br/wp-content/uploads/2020/04/logo2020_png.png"></span></small>
+                    <div class="text">
+                        <h2>Responsavel Legal 2</h2>
+                        <p>Preencha de forma completa as Abas.</p>
+                    </div>
+                    <div class="input-text">
+                        <div class="input-div">
+                            <input type="text" required require>
+                            <span>Nome Completo</span>
+                        </div>
+                        <div class="input-div"> 
+                            <input type="text" oninput="mascara(this)" required require>
+                            <span>CPF</span>
+                        </div>
+                    </div>
+                    <div class="input-text">
+                        <div class="input-div">
+                            <input type="text" maxlength="16" required require>
+                            <span>RG</span>
+                        </div>
+                        <div class="input-div">
+                            <input type="text" required require>
+                            <span>Orgão Emissor</span>
+                        </div>
+                    </div>
+                    
+                    <div class="input-text">
+                        <div class="input-div">
+                            <input type="text" name="cep" id="cep" value="" size="10" maxlength="9" onblur="pesquisacep(this.value);" required require>
+                            <span>CEP</span>
+                        </div>
+                        <div class="input-div">
+                            <input type="text" name="rua" id="rua" size="60" required require>
+                            <span>Endereço - Rua</span>
+                        </div>
+                    </div>
+                    <div class="input-text">
+                        <div class="input-div">
+                            <input type="text" name="bairro"  id="bairro" size="40"  required require>
+                            <span>Bairro</span>
+                        </div>
+                        <div class="input-div">
+                            <input type="text" name="cidade" id="cidade" size="40" required require>
+                            <span>Cidade</span>
+                        </div>
+                    </div>
+                    <div class="input-text">
+                        <div class="input-div">
+                            <select class="form-select" aria-label="Default select example">
+                                <option selected>UF</option>
+                                    <option>DF</option>
+                                    <option>RJ</option>
+                                    <option>SP</option>
+                                    <option>RN</option>
+                                    <option>BA</option>
+                                    <option>BH</option>
+                                    <option>RO</option>
+                                    <option>AC</option>
+                                    <option>AM</option>
+                                    <option>CE</option>
+                                    <option>PB</option>
+                                    <option>PE</option>
+                                    <option>AL</option>
+                                    <option>MG</option>
+                                    <option>SC</option>
+                                    <option>GO</option>
+                                    <option>AP</option>
+                                    <option>PI</option>
+                                    <option>SE</option>
+                                    <OPtion>MG</OPtion>
+                                    <option>ES</option>
+                                    <option>PR</option>
+                                    <option>SC</option>
+                                    <option>MT</option>
+                                    <option>RS</option>
+                                    <option>TO</option>
+                                </select>
+                        </div>
+                        <div class="input-div">
+                            <input type="text" required require>
+                            <span>Complemento</span>
+                        </div>
+                    </div>
+                        <div class="input-text">
+                            <div class="input-div"> 
+                                <input type="text" required require>
+                                <span>E-mail do Responsavel Legal</span>
+                            </div>
+                            <div class="input-div"> 
+                                <input type="text" required>
+                                <span>E-mail Alternativo</span>
+                            </div>
+                        </div>
+                        <div class="input-text">
+                            <div class="input-div">
+                                <input type="text" required require>
+                                <span>Telefone do Responsavel Legal</span>
+                            </div>
+                            <div class="input-div">
+                                <input type="text" name="outra_data" id="outra_data" maxlength="10" onkeypress="mascaraData(this)" required require>
+                                <span>Data de Nascimento</span>
+                            </div>
+                        </div>
+                        <div class="input-text">
+                            <div class="input-div">
+                                <input type="text" required require>
+                                <span>Observação</span>
+                            </div>
+                        </div>
+                        <div class="buttons button_space">
+                            <button class="back_button">Anterior</button>
+                            <button class="next_button">Próximo</button>
+                        </div>
+                
+                </div>
+
+                <!-- Pagina 6 (Dados Bancarios) -->
+
+                <div class="main">
+                    <small><span><img src="https://cooperx.coop.br/wp-content/uploads/2020/04/logo2020_png.png"></span></small>
+                    <div class="text">
+                        <h2>Dados Bancários</h2>
+                        <p>Preencha de forma completa as Abas.</p>
+                    </div>
+                    <div class="input-text">
+                        <div class="input-div">
+                            <select class="form-select" aria-label="Default select example">
+                                <option selected>Bancos</option>
+                                    <option>001</option>
+                                    <option>237</option>
+                                    <option>335</option>
+                                    <option>260</option>
+                                    <option>290</option>
+                                    <option>341</option>
+                                    <option>104</option>
+                                    <option>033</option>
+                                    <option>070</option>
+                                </select>
+                        </div>
+                        <div class="input-div">
+                            <input type="text" required require>
+                            <span>Agência e Digito</span>
+                        </div>
+                    </div>
+                    <div class="input-text">
+                        <div class="input-div">
+                            <input type="text" required require>
+                            <span>Conta Corrente e Digito</span>
+                        </div>
+                    </div>
+                    <div class="buttons button_space">
+                        <button class="back_button">Anterior</button>
+                        <button class="next_button">Próximo</button>
+                    </div>
+                </div>
+
+                <!--  Pagina 7 (Anexo de Documentos PESSOA JURIDICA) -->
+
+                <div class="main">
+                    <small><span><img src="https://cooperx.coop.br/wp-content/uploads/2020/04/logo2020_png.png"></span></small>
+                    <div class="text">
+                        <h2>Documentos Obrigatórios</h2>
+                        <p>Anexar todos os docuemtnos necessarios.</p>
+                    </div>
+                    
+                    <div class="input-text">
+                        <div class="input-div">
+                            <label for="formFile" class="form-label">Cartão CNPJ</label>
+                            <input class="form-control" type="file" id="formFile">
+                        </div>
+                        <div class="input-div">
+                            <label for="formFile" class="form-label">Contrato Social</label>
+                            <input class="form-control" type="file" id="formFile">
+                        </div>
+                    </div>
+                    <div class="input-text">
+                        <div class="input-div">
+                            <label for="formFile" class="form-label">Ficha de Adesão Assinada</label>
+                            <input class="form-control" type="file" id="formFile">
+                        </div>
+                        <div class="input-div">
+                            <label for="formFile" class="form-label">Termo de Confidencialidade</label>
+                            <input class="form-control" type="file" id="formFile">
+                        </div>
+                    </div>
+                    <div class="input-text">
+                        <div class="input-div">
+                            <label for="formFile" class="form-label">Comprovante de Dados Bancário</label>
+                            <input class="form-control" type="file" id="formFile">
+                        </div>
+                        <div class="input-div">
+                            <label for="formFile" class="form-label">Comprovante de Endereço</label>
+                            <input class="form-control" type="file" id="formFile">
+                        </div>
+                    </div>
+                        
+                    <div class="buttons button_space">
+                        <button class="back_button">Anterior</button>
+                        <button class="next_button">Próximo</button>
+                    </div>
+                </div>
+
+                <!--  Pagina 8 (Anexo de Documentos PESSOA FISICA) -->
+
+                <div class="main">
+                    <small><span><img src="https://cooperx.coop.br/wp-content/uploads/2020/04/logo2020_png.png"></span></small>
+                    <div class="text">
+                        <h2>Documentos Obrigatórios</h2>
+                        <p>Anexar todos os docuemtnos necessarios.</p>
+                    </div>
+                    
+                    <div class="input-text">
+                        <div class="input-div">
+                            <label for="formFile" class="form-label">CPF</label>
+                            <input class="form-control" type="file" id="formFile">
+                        </div>
+                        <div class="input-div">
+                            <label for="formFile" class="form-label">E-Social</label>
+                            <input class="form-control" type="file" id="formFile">
+                        </div>
+                    </div>
+                    <div class="input-text">
+                        <div class="input-div">
+                            <label for="formFile" class="form-label">Ficha de Adesão Assinada</label>
+                            <input class="form-control" type="file" id="formFile">
+                        </div>
+                        <div class="input-div">
+                            <label for="formFile" class="form-label">Termo de Confidencialidade</label>
+                            <input class="form-control" type="file" id="formFile">
+                        </div>
+                    </div>
+                    <div class="input-text">
+                        <div class="input-div">
+                            <label for="formFile" class="form-label">Comprovante de Dados Bancário</label>
+                            <input class="form-control" type="file" id="formFile">
+                        </div>
+                        <div class="input-div">
+                            <label for="formFile" class="form-label">Comprovante de Endereço</label>
+                            <input class="form-control" type="file" id="formFile">
+                        </div>
+                    </div>
+                        
+                    <div class="buttons button_space">
+                        <button class="back_button">Anterior</button>
+                        <button class="next_button">Próximo</button>
+                    </div>
+                </div>
+
+                <!--  Pagina 9 (Perfil de Trabalho) -->
+
+                <div class="main">
+                    <small><span><img src="https://cooperx.coop.br/wp-content/uploads/2020/04/logo2020_png.png"></span></small>
+                    <div class="text">
+                        <h2>Perfil de Trabalho</h2>
+                        <p>Preencha de forma completa as Abas.</p>
+                    </div>
+                    <div class="input-text">
+                        <div class="input-div">
+                            <select class="form-select" aria-label="Default select example"> 
+                                <option selected>Regime Preferido</option>
+                                    <option>Integral</option>
+                                    <option>Parcial</option>
+                                    <option>Horário Flexível</option>
+                                    <option>Sprint</option>
+                            </select>
+                        </div>    
+                            <div class="input-div"> 
+                                <select class="form-select" aria-label="Default select example">
+                                    <option selected>Horas Disponiveis</option>
+                                    <option>3 Horas</option>
+                                    <option>4 Horas</option>
+                                    <option>5 Horas</option>
+                                    <option>6 Horas</option>
+                                    <option>7 Horas</option>
+                                    <option>8 Horas</option>
+                                    <option>9 Horas ou mais</option>
+                                </select>
+                            </div>
+                                <div class="input-div"> 
+                                    <select class="form-select" aria-label="Default select example">
+                                        <option selected>Mês</option>
+                                        <option>Janeiro</option>
+                                        <option>Fevereiro</option>
+                                        <option>Março</option>
+                                        <option>Abril</option>
+                                        <option>Maio</option>
+                                        <option>Junho</option>
+                                        <option>Julho</option>
+                                        <option>Agosto</option>
+                                        <option>Setembro</option>
+                                        <option>Outubro</option>
+                                        <option>Novembro</option>
+                                        <option>Dezembro</option>
+                                    </select>
+                            </div>
+                        </div>                                    
+                    <div class="buttons button_space">
+                        <button class="back_button">Anterior</button>
+                        <button class="next_button">Próximo</button>
+                    </div>
+                </div>
+
+                <!-- Quarta Pagina -->
+                
+                <div class="main"; style="overflow-y: scroll; height:750px;">
+                    <small><span><img src="https://cooperx.coop.br/wp-content/uploads/2020/04/logo2020_png.png"></span></small>
+                    <div class="text">
+                        <h2>Skills</h2>
+                        <p>Qual(is) função(ões) você pode ser alocado em um projeto da COOPERX.</p>
+                    </div>
+                    <div class="input-text">
+                        <div class="input-div"> 
+                            <select class="form-select" aria-label="Default select example">
+                                <option selected>Qual a sua principal função hoje?
+                                </option>
+                                    <option>Analista</option>
+                                    <option>DBA</option>
+                                    <option>Desenvolvimento</option>
+                                    <option>DevOps</option>
+                                    <option>Gerente de Projetos</option>
+                                    <option>Product Owner</option>
+                                    <option>Testes/QA</option>
+                                </select>
+                        </div>       
+                        <div class="input-div"> 
+                            <select class="form-select" aria-label="Default select example">
+                                <option selected>Seu Nível de conhecimento</option>
+                                    <option>Júnior</option>
+                                    <option>Pleno</option>
+                                    <option>Senior</option>
+                                    <option>Master</option>
+                                </select>
+                        </div>
+                    </div>
+
+                    <div class="input-text">
+                            <div class="input-div">
+                                <label>Analista </label> 
+                                <select class="form-select" aria-label="Default select example">
+                                    <option selected>Selecione seu nivel</option>
+                                        <option>Júnior</option>
+                                        <option>Pleno</option>
+                                        <option>Sênior</option>
+                                        <option>Master</option>
+                                        <option>Certificado</option>
+                                        <option>Sem experiência</option>
+                                    </select>
+                            </div>
+                            <div class="input-div">
+                                <label>DBA </label> 
+                                <select class="form-select" aria-label="Default select example">
+                                    <option selected>Selecione seu nivel</option>
+                                        <option>Júnior</option>
+                                        <option>Pleno</option>
+                                        <option>Sênior</option>
+                                        <option>Master</option>
+                                        <option>Certificado</option>
+                                        <option>Sem experiência</option>
+                                    </select>
+                            </div>
+                        </div> 
+                        <div class="input-text">
+                            <div class="input-div">
+                                <label>Desenvolvedor </label> 
+                                <select class="form-select" aria-label="Default select example">
+                                    <option selected>Selecione seu nivel</option>
+                                        <option>Júnior</option>
+                                        <option>Pleno</option>
+                                        <option>Sênior</option>
+                                        <option>Master</option>
+                                        <option>Certificado</option>
+                                        <option>Sem experiência</option>
+                                    </select>
+                            </div>
+                            <div class="input-div">
+                                <label>DevOps: </label> 
+                                <select class="form-select" aria-label="Default select example">
+                                    <option selected>Selecione seu nivel</option>
+                                        <option>Júnior</option>
+                                        <option>Pleno</option>
+                                        <option>Sênior</option>
+                                        <option>Master</option>
+                                        <option>Certificado</option>
+                                        <option>Sem experiência</option>
+                                    </select>
+                            </div>
+                        </div>
+
+                        <div class="input-text">
+                            <div class="input-div">
+                                <label>Gerente de Projetos </label> 
+                                <select class="form-select" aria-label="Default select example">
+                                    <option selected>Selecione seu nivel</option>
+                                        <option>Júnior</option>
+                                        <option>Pleno</option>
+                                        <option>Sênior</option>
+                                        <option>Master</option>
+                                        <option>Certificado</option>
+                                        <option>Sem experiência</option>
+                                    </select>
+                            </div>
+                            <div class="input-div">
+                                <label>Product Owner </label> 
+                                <select class="form-select" aria-label="Default select example">
+                                    <option selected>Selecione seu nivel</option>
+                                        <option>Júnior</option>
+                                        <option>Pleno</option>
+                                        <option>Sênior</option>
+                                        <option>Master</option>
+                                        <option>Certificado</option>
+                                        <option>Sem experiência</option>
+                                    </select>
+                            </div>
+                            <div class="input-div">
+                                <label>Teste / QA </label> 
+                                <select class="form-select" aria-label="Default select example">
+                                    <option selected>Selecione seu nivel</option>
+                                        <option>Júnior</option>
+                                        <option>Pleno</option>
+                                        <option>Sênior</option>
+                                        <option>Master</option>
+                                        <option>Certificado</option>
+                                        <option>Sem experiência</option>
+                                    </select>
+                            </div>
+                        </div>
+
+                        <div class="buttons button_space">
+                            <button class="back_button">Anterior</button>
+                            <button class="next_button">Próximo</button>
+                        </div>
+                    </div>   
+                    
+                    <!---TELA DE SKILLS -->
+
+                    <div class="main"; style="overflow-y: scroll; height:750px;">
+                        <small><span><img src="https://cooperx.coop.br/wp-content/uploads/2020/04/logo2020_png.png"></span></small>
+                        <div class="text">
+                            <h2>Skills</h2>
+                            <p>Em seus conhecimentos gerais, selecione as tecnologias que tem conhecimento e informe na coluna ao lado o nível de conhecimento de cada item selecionado.</p>
+                        </div>
+                        <div class="input-text">
+                            <div class="input-div"> 
+                                <label>ABAP(SAP) </label> 
+                                    <select class="form-select" aria-label="Default select example">
+                                        <option selected>Seu nivel de conhecimento</option>
+                                            <option>Básico</option>
+                                            <option>Intermediário</option>
+                                            <option>Avançado</option>
+                                            <option>Certificado</option>
+                                            <option>Sem experiência</option>
+                                        </select>
+                            </div>       
+                            <div class="input-div"> 
+                                <label>Android </label> 
+                                    <select class="form-select" aria-label="Default select example">
+                                        <option selected>Seu nivel de conhecimento</option>
+                                            <option>Básico</option>
+                                            <option>Intermediário</option>
+                                            <option>Avançado</option>
+                                            <option>Certificado</option>
+                                            <option>Sem experiência</option>
+                                        </select>
+                            </div>
+                            <div class="input-div"> 
+                                <label>Angular </label> 
+                                    <select class="form-select" aria-label="Default select example">
+                                        <option selected>Seu nivel de conhecimento</option>
+                                            <option>Básico</option>
+                                            <option>Intermediário</option>
+                                            <option>Avançado</option>
+                                            <option>Certificado</option>
+                                            <option>Sem experiência</option>
+                                        </select>
+                            </div>
+                            <div class="input-div"> 
+                                <label>Ansible - IAC </label> 
+                                    <select class="form-select" aria-label="Default select example">
+                                        <option selected>Seu nivel de conhecimento</option>
+                                            <option>Básico</option>
+                                            <option>Intermediário</option>
+                                            <option>Avançado</option>
+                                            <option>Certificado</option>
+                                            <option>Sem experiência</option>
+                                        </select>
+                            </div>
+                        </div>
+
+                        <div class="input-text">
+                            <div class="input-div"> 
+                                <label>ASP.NET </label> 
+                                    <select class="form-select" aria-label="Default select example">
+                                        <option selected>Seu nivel de conhecimento</option>
+                                            <option>Básico</option>
+                                            <option>Intermediário</option>
+                                            <option>Avançado</option>
+                                            <option>Certificado</option>
+                                            <option>Sem experiência</option>
+                                        </select>
+                            </div>       
+                            <div class="input-div"> 
+                                <label>ASP.NET.MVC </label> 
+                                    <select class="form-select" aria-label="Default select example">
+                                        <option selected>Seu nivel de conhecimento</option>
+                                            <option>Básico</option>
+                                            <option>Intermediário</option>
+                                            <option>Avançado</option>
+                                            <option>Certificado</option>
+                                            <option>Sem experiência</option>
+                                        </select>
+                            </div>
+                            <div class="input-div"> 
+                                <label>Bash/Shell </label> 
+                                    <select class="form-select" aria-label="Default select example">
+                                        <option selected>Seu nivel de conhecimento</option>
+                                            <option>Básico</option>
+                                            <option>Intermediário</option>
+                                            <option>Avançado</option>
+                                            <option>Certificado</option>
+                                            <option>Sem experiência</option>
+                                        </select>
+                            </div>
+                            <div class="input-div"> 
+                                <label>BI - Powerbi </label> 
+                                    <select class="form-select" aria-label="Default select example">
+                                        <option selected>Seu nivel de conhecimento</option>
+                                            <option>Básico</option>
+                                            <option>Intermediário</option>
+                                            <option>Avançado</option>
+                                            <option>Certificado</option>
+                                            <option>Sem experiência</option>
+                                        </select>
+                            </div>
+                        </div>
+
+
+                        <div class="input-text">
+                            <div class="input-div"> 
+                                <label>BI - Qlik </label> 
+                                    <select class="form-select" aria-label="Default select example">
+                                        <option selected>Seu nivel de conhecimento</option>
+                                            <option>Básico</option>
+                                            <option>Intermediário</option>
+                                            <option>Avançado</option>
+                                            <option>Certificado</option>
+                                            <option>Sem experiência</option>
+                                        </select>
+                            </div>       
+                            <div class="input-div"> 
+                                <label>BI - Tableau </label> 
+                                    <select class="form-select" aria-label="Default select example">
+                                        <option selected>Seu nivel de conhecimento</option>
+                                            <option>Básico</option>
+                                            <option>Intermediário</option>
+                                            <option>Avançado</option>
+                                            <option>Certificado</option>
+                                            <option>Sem experiência</option>
+                                        </select>
+                            </div>
+                            <div class="input-div"> 
+                                <label>C</label> 
+                                    <select class="form-select" aria-label="Default select example">
+                                        <option selected>Seu nivel de conhecimento</option>
+                                            <option>Básico</option>
+                                            <option>Intermediário</option>
+                                            <option>Avançado</option>
+                                            <option>Certificado</option>
+                                            <option>Sem experiência</option>
+                                        </select>
+                            </div>
+                            <div class="input-div"> 
+                                <label>C#(C Sharp) </label> 
+                                    <select class="form-select" aria-label="Default select example">
+                                        <option selected>Seu nivel de conhecimento</option>
+                                            <option>Básico</option>
+                                            <option>Intermediário</option>
+                                            <option>Avançado</option>
+                                            <option>Certificado</option>
+                                            <option>Sem experiência</option>
+                                        </select>
+                            </div>
+                        </div>
+
+                        <div class="input-text">
+                            <div class="input-div"> 
+                                <label>C++ </label> 
+                                    <select class="form-select" aria-label="Default select example">
+                                        <option selected>Seu nivel de conhecimento</option>
+                                            <option>Básico</option>
+                                            <option>Intermediário</option>
+                                            <option>Avançado</option>
+                                            <option>Certificado</option>
+                                            <option>Sem experiência</option>
+                                        </select>
+                            </div>       
+                            <div class="input-div"> 
+                                <label>COBOL </label> 
+                                    <select class="form-select" aria-label="Default select example">
+                                        <option selected>Seu nivel de conhecimento</option>
+                                            <option>Básico</option>
+                                            <option>Intermediário</option>
+                                            <option>Avançado</option>
+                                            <option>Certificado</option>
+                                            <option>Sem experiência</option>
+                                        </select>
+                            </div>
+                            <div class="input-div"> 
+                                <label>Delphi </label> 
+                                    <select class="form-select" aria-label="Default select example">
+                                        <option selected>Seu nivel de conhecimento</option>
+                                            <option>Básico</option>
+                                            <option>Intermediário</option>
+                                            <option>Avançado</option>
+                                            <option>Certificado</option>
+                                            <option>Sem experiência</option>
+                                        </select>
+                            </div>
+                            <div class="input-div"> 
+                                <label>Docker </label> 
+                                    <select class="form-select" aria-label="Default select example">
+                                        <option selected>Seu nivel de conhecimento</option>
+                                            <option>Básico</option>
+                                            <option>Intermediário</option>
+                                            <option>Avançado</option>
+                                            <option>Certificado</option>
+                                            <option>Sem experiência</option>
+                                        </select>
+                            </div>
+                        </div>
+                        
+
+                        
+                        <div class="input-text">
+                            <div class="input-div"> 
+                                <label>Elastic Search </label> 
+                                    <select class="form-select" aria-label="Default select example">
+                                        <option selected>Seu nivel de conhecimento</option>
+                                            <option>Básico</option>
+                                            <option>Intermediário</option>
+                                            <option>Avançado</option>
+                                            <option>Certificado</option>
+                                            <option>Sem experiência</option>
+                                        </select>
+                            </div>       
+                            <div class="input-div"> 
+                                <label>Elixir </label> 
+                                    <select class="form-select" aria-label="Default select example">
+                                        <option selected>Seu nivel de conhecimento</option>
+                                            <option>Básico</option>
+                                            <option>Intermediário</option>
+                                            <option>Avançado</option>
+                                            <option>Certificado</option>
+                                            <option>Sem experiência</option>
+                                        </select>
+                            </div>
+                            <div class="input-div"> 
+                                <label>Figma</label> 
+                                    <select class="form-select" aria-label="Default select example">
+                                        <option selected>Seu nivel de conhecimento</option>
+                                            <option>Básico</option>
+                                            <option>Intermediário</option>
+                                            <option>Avançado</option>
+                                            <option>Certificado</option>
+                                            <option>Sem experiência</option>
+                                        </select>
+                            </div>
+                            <div class="input-div"> 
+                                <label>Firebase </label> 
+                                    <select class="form-select" aria-label="Default select example">
+                                        <option selected>Seu nivel de conhecimento</option>
+                                            <option>Básico</option>
+                                            <option>Intermediário</option>
+                                            <option>Avançado</option>
+                                            <option>Certificado</option>
+                                            <option>Sem experiência</option>
+                                        </select>
+                            </div>
+                        </div>
+
+                        <div class="input-text">
+                            <div class="input-div"> 
+                                <label>Firebird</label> 
+                                    <select class="form-select" aria-label="Default select example">
+                                        <option selected>Seu nivel de conhecimento</option>
+                                            <option>Básico</option>
+                                            <option>Intermediário</option>
+                                            <option>Avançado</option>
+                                            <option>Certificado</option>
+                                            <option>Sem experiência</option>
+                                        </select>
+                            </div>       
+                            <div class="input-div"> 
+                                <label>Flutter </label> 
+                                    <select class="form-select" aria-label="Default select example">
+                                        <option selected>Seu nivel de conhecimento</option>
+                                            <option>Básico</option>
+                                            <option>Intermediário</option>
+                                            <option>Avançado</option>
+                                            <option>Certificado</option>
+                                            <option>Sem experiência</option>
+                                        </select>
+                            </div>
+                            <div class="input-div"> 
+                                <label>GitHub Actions </label> 
+                                    <select class="form-select" aria-label="Default select example">
+                                        <option selected>Seu nivel de conhecimento</option>
+                                            <option>Básico</option>
+                                            <option>Intermediário</option>
+                                            <option>Avançado</option>
+                                            <option>Certificado</option>
+                                            <option>Sem experiência</option>
+                                        </select>
+                            </div>
+                            <div class="input-div"> 
+                                <label>Gitlab CI </label> 
+                                    <select class="form-select" aria-label="Default select example">
+                                        <option selected>Seu nivel de conhecimento</option>
+                                            <option>Básico</option>
+                                            <option>Intermediário</option>
+                                            <option>Avançado</option>
+                                            <option>Certificado</option>
+                                            <option>Sem experiência</option>
+                                        </select>
+                            </div>
+                        </div>
+
+
+                        <div class="input-text">
+                            <div class="input-div"> 
+                                <label>Grafana </label> 
+                                    <select class="form-select" aria-label="Default select example">
+                                        <option selected>Seu nivel de conhecimento</option>
+                                            <option>Básico</option>
+                                            <option>Intermediário</option>
+                                            <option>Avançado</option>
+                                            <option>Certificado</option>
+                                            <option>Sem experiência</option>
+                                        </select>
+                            </div>       
+                            <div class="input-div"> 
+                                <label>GO </label> 
+                                    <select class="form-select" aria-label="Default select example">
+                                        <option selected>Seu nivel de conhecimento</option>
+                                            <option>Básico</option>
+                                            <option>Intermediário</option>
+                                            <option>Avançado</option>
+                                            <option>Certificado</option>
+                                            <option>Sem experiência</option>
+                                        </select>
+                            </div>
+                            <div class="input-div"> 
+                                <label>IBM DB2</label> 
+                                    <select class="form-select" aria-label="Default select example">
+                                        <option selected>Seu nivel de conhecimento</option>
+                                            <option>Básico</option>
+                                            <option>Intermediário</option>
+                                            <option>Avançado</option>
+                                            <option>Certificado</option>
+                                            <option>Sem experiência</option>
+                                        </select>
+                            </div>
+                            <div class="input-div"> 
+                                <label>Infra.AWS </label> 
+                                    <select class="form-select" aria-label="Default select example">
+                                        <option selected>Seu nivel de conhecimento</option>
+                                            <option>Básico</option>
+                                            <option>Intermediário</option>
+                                            <option>Avançado</option>
+                                            <option>Certificado</option>
+                                            <option>Sem experiência</option>
+                                        </select>
+                            </div>
+                        </div>
+
+                        <div class="input-text">
+                            <div class="input-div"> 
+                                <label>Infra.AZURE</label> 
+                                    <select class="form-select" aria-label="Default select example">
+                                        <option selected>Seu nivel de conhecimento</option>
+                                            <option>Básico</option>
+                                            <option>Intermediário</option>
+                                            <option>Avançado</option>
+                                            <option>Certificado</option>
+                                            <option>Sem experiência</option>
+                                        </select>
+                            </div>       
+                            <div class="input-div"> 
+                                <label>IOS </label> 
+                                    <select class="form-select" aria-label="Default select example">
+                                        <option selected>Seu nivel de conhecimento</option>
+                                            <option>Básico</option>
+                                            <option>Intermediário</option>
+                                            <option>Avançado</option>
+                                            <option>Certificado</option>
+                                            <option>Sem experiência</option>
+                                        </select>
+                            </div>
+                            <div class="input-div"> 
+                                <label>Java</label> 
+                                    <select class="form-select" aria-label="Default select example">
+                                        <option selected>Seu nivel de conhecimento</option>
+                                            <option>Básico</option>
+                                            <option>Intermediário</option>
+                                            <option>Avançado</option>
+                                            <option>Certificado</option>
+                                            <option>Sem experiência</option>
+                                        </select>
+                            </div>
+                            <div class="input-div"> 
+                                <label>Java - Angular </label> 
+                                    <select class="form-select" aria-label="Default select example">
+                                        <option selected>Seu nivel de conhecimento</option>
+                                            <option>Básico</option>
+                                            <option>Intermediário</option>
+                                            <option>Avançado</option>
+                                            <option>Certificado</option>
+                                            <option>Sem experiência</option>
+                                        </select>
+                            </div>
+                        </div>
+
+
+
+                        <div class="input-text">
+                            <div class="input-div"> 
+                                <label>Java - Eclipse</label> 
+                                    <select class="form-select" aria-label="Default select example">
+                                        <option selected>Seu nivel de conhecimento</option>
+                                            <option>Básico</option>
+                                            <option>Intermediário</option>
+                                            <option>Avançado</option>
+                                            <option>Certificado</option>
+                                            <option>Sem experiência</option>
+                                        </select>
+                            </div>       
+                            <div class="input-div"> 
+                                <label> Java - Intellijdea </label> 
+                                    <select class="form-select" aria-label="Default select example">
+                                        <option selected>Seu nivel de conhecimento</option>
+                                            <option>Básico</option>
+                                            <option>Intermediário</option>
+                                            <option>Avançado</option>
+                                            <option>Certificado</option>
+                                            <option>Sem experiência</option>
+                                        </select>
+                            </div>
+                            <div class="input-div"> 
+                                <label>Java - Maven</label> 
+                                    <select class="form-select" aria-label="Default select example">
+                                        <option selected>Seu nivel de conhecimento</option>
+                                            <option>Básico</option>
+                                            <option>Intermediário</option>
+                                            <option>Avançado</option>
+                                            <option>Certificado</option>
+                                            <option>Sem experiência</option>
+                                        </select>
+                            </div>
+                            <div class="input-div"> 
+                                <label>Java - Jenkins </label> 
+                                    <select class="form-select" aria-label="Default select example">
+                                        <option selected>Seu nivel de conhecimento</option>
+                                            <option>Básico</option>
+                                            <option>Intermediário</option>
+                                            <option>Avançado</option>
+                                            <option>Certificado</option>
+                                            <option>Sem experiência</option>
+                                        </select>
+                            </div>
+                        </div>
+
+
+                        <div class="input-text">
+                            <div class="input-div"> 
+                                <label>Java - GitHub </label> 
+                                    <select class="form-select" aria-label="Default select example">
+                                        <option selected>Seu nivel de conhecimento</option>
+                                            <option>Básico</option>
+                                            <option>Intermediário</option>
+                                            <option>Avançado</option>
+                                            <option>Certificado</option>
+                                            <option>Sem experiência</option>
+                                        </select>
+                            </div>       
+                            <div class="input-div"> 
+                                <label>Java - CDI </label> 
+                                    <select class="form-select" aria-label="Default select example">
+                                        <option selected>Seu nivel de conhecimento</option>
+                                            <option>Básico</option>
+                                            <option>Intermediário</option>
+                                            <option>Avançado</option>
+                                            <option>Certificado</option>
+                                            <option>Sem experiência</option>
+                                        </select>
+                            </div>
+                            <div class="input-div"> 
+                                <label>Java - Spring Boot</label> 
+                                    <select class="form-select" aria-label="Default select example">
+                                        <option selected>Seu nivel de conhecimento</option>
+                                            <option>Básico</option>
+                                            <option>Intermediário</option>
+                                            <option>Avançado</option>
+                                            <option>Certificado</option>
+                                            <option>Sem experiência</option>
+                                        </select>
+                            </div>
+                            <div class="input-div"> 
+                                <label>Java - Spring Data </label> 
+                                    <select class="form-select" aria-label="Default select example">
+                                        <option selected>Seu nivel de conhecimento</option>
+                                            <option>Básico</option>
+                                            <option>Intermediário</option>
+                                            <option>Avançado</option>
+                                            <option>Certificado</option>
+                                            <option>Sem experiência</option>
+                                        </select>
+                            </div>
+                        </div>
+
+                        <div class="input-text">
+                            <div class="input-div"> 
+                                <label>Java - Spring MvX</label> 
+                                    <select class="form-select" aria-label="Default select example">
+                                        <option selected>Seu nivel de conhecimento</option>
+                                            <option>Básico</option>
+                                            <option>Intermediário</option>
+                                            <option>Avançado</option>
+                                            <option>Certificado</option>
+                                            <option>Sem experiência</option>
+                                        </select>
+                            </div>       
+                            <div class="input-div"> 
+                                <label>Java - JPA</label> 
+                                    <select class="form-select" aria-label="Default select example">
+                                        <option selected>Seu nivel de conhecimento</option>
+                                            <option>Básico</option>
+                                            <option>Intermediário</option>
+                                            <option>Avançado</option>
+                                            <option>Certificado</option>
+                                            <option>Sem experiência</option>
+                                        </select>
+                            </div>
+                            <div class="input-div"> 
+                                <label>Java - ReactJS</label> 
+                                    <select class="form-select" aria-label="Default select example">
+                                        <option selected>Seu nivel de conhecimento</option>
+                                            <option>Básico</option>
+                                            <option>Intermediário</option>
+                                            <option>Avançado</option>
+                                            <option>Certificado</option>
+                                            <option>Sem experiência</option>
+                                        </select>
+                            </div>
+                            <div class="input-div"> 
+                                <label>JavaScript </label> 
+                                    <select class="form-select" aria-label="Default select example">
+                                        <option selected>Seu nivel de conhecimento</option>
+                                            <option>Básico</option>
+                                            <option>Intermediário</option>
+                                            <option>Avançado</option>
+                                            <option>Certificado</option>
+                                            <option>Sem experiência</option>
+                                        </select>
+                            </div>
+                        </div>
+
+
+                        <div class="input-text">
+                            <div class="input-div"> 
+                                <label>JQuery</label> 
+                                    <select class="form-select" aria-label="Default select example">
+                                        <option selected>Seu nivel de conhecimento</option>
+                                            <option>Básico</option>
+                                            <option>Intermediário</option>
+                                            <option>Avançado</option>
+                                            <option>Certificado</option>
+                                            <option>Sem experiência</option>
+                                        </select>
+                            </div>       
+                            <div class="input-div"> 
+                                <label> Jenkins - CI </label> 
+                                    <select class="form-select" aria-label="Default select example">
+                                        <option selected>Seu nivel de conhecimento</option>
+                                            <option>Básico</option>
+                                            <option>Intermediário</option>
+                                            <option>Avançado</option>
+                                            <option>Certificado</option>
+                                            <option>Sem experiência</option>
+                                        </select>
+                            </div>
+                            <div class="input-div"> 
+                                <label>Kibana - Dashboar</label> 
+                                    <select class="form-select" aria-label="Default select example">
+                                        <option selected>Seu nivel de conhecimento</option>
+                                            <option>Básico</option>
+                                            <option>Intermediário</option>
+                                            <option>Avançado</option>
+                                            <option>Certificado</option>
+                                            <option>Sem experiência</option>
+                                        </select>
+                            </div>
+                            <div class="input-div"> 
+                                <label> Kotlin </label> 
+                                    <select class="form-select" aria-label="Default select example">
+                                        <option selected>Seu nivel de conhecimento</option>
+                                            <option>Básico</option>
+                                            <option>Intermediário</option>
+                                            <option>Avançado</option>
+                                            <option>Certificado</option>
+                                            <option>Sem experiência</option>
+                                        </select>
+                            </div>
+                        </div>
+
+
+                        <div class="input-text">
+                            <div class="input-div"> 
+                                <label>Kubernetes - Containers </label> 
+                                    <select class="form-select" aria-label="Default select example">
+                                        <option selected>Seu nivel de conhecimento</option>
+                                            <option>Básico</option>
+                                            <option>Intermediário</option>
+                                            <option>Avançado</option>
+                                            <option>Certificado</option>
+                                            <option>Sem experiência</option>
+                                        </select>
+                            </div>       
+                            <div class="input-div"> 
+                                <label>Kubernets </label> 
+                                    <select class="form-select" aria-label="Default select example">
+                                        <option selected>Seu nivel de conhecimento</option>
+                                            <option>Básico</option>
+                                            <option>Intermediário</option>
+                                            <option>Avançado</option>
+                                            <option>Certificado</option>
+                                            <option>Sem experiência</option>
+                                        </select>
+                            </div>
+                            <div class="input-div"> 
+                                <label>Logstash - Logging</label> 
+                                    <select class="form-select" aria-label="Default select example">
+                                        <option selected>Seu nivel de conhecimento</option>
+                                            <option>Básico</option>
+                                            <option>Intermediário</option>
+                                            <option>Avançado</option>
+                                            <option>Certificado</option>
+                                            <option>Sem experiência</option>
+                                        </select>
+                            </div>
+                            <div class="input-div"> 
+                                <label>Loki - Loggin </label> 
+                                    <select class="form-select" aria-label="Default select example">
+                                        <option selected>Seu nivel de conhecimento</option>
+                                            <option>Básico</option>
+                                            <option>Intermediário</option>
+                                            <option>Avançado</option>
+                                            <option>Certificado</option>
+                                            <option>Sem experiência</option>
+                                        </select>
+                            </div>
+                        </div>
+
+                        <div class="input-text">
+                            <div class="input-div"> 
+                                <label>Metricbeat - Metrics</label> 
+                                    <select class="form-select" aria-label="Default select example">
+                                        <option selected>Seu nivel de conhecimento</option>
+                                            <option>Básico</option>
+                                            <option>Intermediário</option>
+                                            <option>Avançado</option>
+                                            <option>Certificado</option>
+                                            <option>Sem experiência</option>
+                                        </select>
+                            </div>       
+                            <div class="input-div"> 
+                                <label>Microserviços</label> 
+                                    <select class="form-select" aria-label="Default select example">
+                                        <option selected>Seu nivel de conhecimento</option>
+                                            <option>Básico</option>
+                                            <option>Intermediário</option>
+                                            <option>Avançado</option>
+                                            <option>Certificado</option>
+                                            <option>Sem experiência</option>
+                                        </select>
+                            </div>
+                            <div class="input-div"> 
+                                <label>Microsoft - Power Automate</label> 
+                                    <select class="form-select" aria-label="Default select example">
+                                        <option selected>Seu nivel de conhecimento</option>
+                                            <option>Básico</option>
+                                            <option>Intermediário</option>
+                                            <option>Avançado</option>
+                                            <option>Certificado</option>
+                                            <option>Sem experiência</option>
+                                        </select>
+                            </div>
+                            <div class="input-div"> 
+                                <label>MySQL</label> 
+                                    <select class="form-select" aria-label="Default select example">
+                                        <option selected>Seu nivel de conhecimento</option>
+                                            <option>Básico</option>
+                                            <option>Intermediário</option>
+                                            <option>Avançado</option>
+                                            <option>Certificado</option>
+                                            <option>Sem experiência</option>
+                                        </select>
+                            </div>
+                        </div>
+
+
+
+
+                        
+                        <div class="input-text">
+                            <div class="input-div"> 
+                                <label>MongoDB</label> 
+                                    <select class="form-select" aria-label="Default select example">
+                                        <option selected>Seu nivel de conhecimento</option>
+                                            <option>Básico</option>
+                                            <option>Intermediário</option>
+                                            <option>Avançado</option>
+                                            <option>Certificado</option>
+                                            <option>Sem experiência</option>
+                                        </select>
+                            </div>       
+                            <div class="input-div"> 
+                                <label> Natural </label> 
+                                    <select class="form-select" aria-label="Default select example">
+                                        <option selected>Seu nivel de conhecimento</option>
+                                            <option>Básico</option>
+                                            <option>Intermediário</option>
+                                            <option>Avançado</option>
+                                            <option>Certificado</option>
+                                            <option>Sem experiência</option>
+                                        </select>
+                            </div>
+                            <div class="input-div"> 
+                                <label>Node.JS</label> 
+                                    <select class="form-select" aria-label="Default select example">
+                                        <option selected>Seu nivel de conhecimento</option>
+                                            <option>Básico</option>
+                                            <option>Intermediário</option>
+                                            <option>Avançado</option>
+                                            <option>Certificado</option>
+                                            <option>Sem experiência</option>
+                                        </select>
+                            </div>
+                            <div class="input-div"> 
+                                <label>Nest</label> 
+                                    <select class="form-select" aria-label="Default select example">
+                                        <option selected>Seu nivel de conhecimento</option>
+                                            <option>Básico</option>
+                                            <option>Intermediário</option>
+                                            <option>Avançado</option>
+                                            <option>Certificado</option>
+                                            <option>Sem experiência</option>
+                                        </select>
+                            </div>
+                        </div>
+
+
+                        <div class="input-text">
+                            <div class="input-div"> 
+                                <label>Next</label> 
+                                    <select class="form-select" aria-label="Default select example">
+                                        <option selected>Seu nivel de conhecimento</option>
+                                            <option>Básico</option>
+                                            <option>Intermediário</option>
+                                            <option>Avançado</option>
+                                            <option>Certificado</option>
+                                            <option>Sem experiência</option>
+                                        </select>
+                            </div>       
+                            <div class="input-div"> 
+                                <label>Nginx</label> 
+                                    <select class="form-select" aria-label="Default select example">
+                                        <option selected>Seu nivel de conhecimento</option>
+                                            <option>Básico</option>
+                                            <option>Intermediário</option>
+                                            <option>Avançado</option>
+                                            <option>Certificado</option>
+                                            <option>Sem experiência</option>
+                                        </select>
+                            </div>
+                            <div class="input-div"> 
+                                <label>Oracle</label> 
+                                    <select class="form-select" aria-label="Default select example">
+                                        <option selected>Seu nivel de conhecimento</option>
+                                            <option>Básico</option>
+                                            <option>Intermediário</option>
+                                            <option>Avançado</option>
+                                            <option>Certificado</option>
+                                            <option>Sem experiência</option>
+                                        </select>
+                            </div>
+                            <div class="input-div"> 
+                                <label>Phoenix</label> 
+                                    <select class="form-select" aria-label="Default select example">
+                                        <option selected>Seu nivel de conhecimento</option>
+                                            <option>Básico</option>
+                                            <option>Intermediário</option>
+                                            <option>Avançado</option>
+                                            <option>Certificado</option>
+                                            <option>Sem experiência</option>
+                                        </select>
+                            </div>
+                        </div>
+
+                        <div class="input-text">
+                            <div class="input-div"> 
+                                <label>Php</label> 
+                                    <select class="form-select" aria-label="Default select example">
+                                        <option selected>Seu nivel de conhecimento</option>
+                                            <option>Básico</option>
+                                            <option>Intermediário</option>
+                                            <option>Avançado</option>
+                                            <option>Certificado</option>
+                                            <option>Sem experiência</option>
+                                        </select>
+                            </div>       
+                            <div class="input-div"> 
+                                <label>Php - CakePHP</label> 
+                                    <select class="form-select" aria-label="Default select example">
+                                        <option selected>Seu nivel de conhecimento</option>
+                                            <option>Básico</option>
+                                            <option>Intermediário</option>
+                                            <option>Avançado</option>
+                                            <option>Certificado</option>
+                                            <option>Sem experiência</option>
+                                        </select>
+                            </div>
+                            <div class="input-div"> 
+                                <label>Php - Codeigniter</label> 
+                                    <select class="form-select" aria-label="Default select example">
+                                        <option selected>Seu nivel de conhecimento</option>
+                                            <option>Básico</option>
+                                            <option>Intermediário</option>
+                                            <option>Avançado</option>
+                                            <option>Certificado</option>
+                                            <option>Sem experiência</option>
+                                        </select>
+                            </div>
+                            <div class="input-div"> 
+                                <label>Php - Laravel</label> 
+                                    <select class="form-select" aria-label="Default select example">
+                                        <option selected>Seu nivel de conhecimento</option>
+                                            <option>Básico</option>
+                                            <option>Intermediário</option>
+                                            <option>Avançado</option>
+                                            <option>Certificado</option>
+                                            <option>Sem experiência</option>
+                                        </select>
+                            </div>
+                        </div>
+
+
+                        <div class="input-text">
+                            <div class="input-div"> 
+                                <label>Php - Phalcon</label> 
+                                    <select class="form-select" aria-label="Default select example">
+                                        <option selected>Seu nivel de conhecimento</option>
+                                            <option>Básico</option>
+                                            <option>Intermediário</option>
+                                            <option>Avançado</option>
+                                            <option>Certificado</option>
+                                            <option>Sem experiência</option>
+                                        </select>
+                            </div>       
+                            <div class="input-div"> 
+                                <label>Php - Symfony</label> 
+                                    <select class="form-select" aria-label="Default select example">
+                                        <option selected>Seu nivel de conhecimento</option>
+                                            <option>Básico</option>
+                                            <option>Intermediário</option>
+                                            <option>Avançado</option>
+                                            <option>Certificado</option>
+                                            <option>Sem experiência</option>
+                                        </select>
+                            </div>
+                            <div class="input-div"> 
+                                <label>Php - Zend</label> 
+                                    <select class="form-select" aria-label="Default select example">
+                                        <option selected>Seu nivel de conhecimento</option>
+                                            <option>Básico</option>
+                                            <option>Intermediário</option>
+                                            <option>Avançado</option>
+                                            <option>Certificado</option>
+                                            <option>Sem experiência</option>
+                                        </select>
+                            </div>
+                            <div class="input-div"> 
+                                <label> Php - Yii </label> 
+                                    <select class="form-select" aria-label="Default select example">
+                                        <option selected>Seu nivel de conhecimento</option>
+                                            <option>Básico</option>
+                                            <option>Intermediário</option>
+                                            <option>Avançado</option>
+                                            <option>Certificado</option>
+                                            <option>Sem experiência</option>
+                                        </select>
+                            </div>
+                        </div>
+
+
+                        <div class="input-text">
+                            <div class="input-div"> 
+                                <label>PostgreSQL </label> 
+                                    <select class="form-select" aria-label="Default select example">
+                                        <option selected>Seu nivel de conhecimento</option>
+                                            <option>Básico</option>
+                                            <option>Intermediário</option>
+                                            <option>Avançado</option>
+                                            <option>Certificado</option>
+                                            <option>Sem experiência</option>
+                                        </select>
+                            </div>       
+                            <div class="input-div"> 
+                                <label>Prometheus - Metrics</label> 
+                                    <select class="form-select" aria-label="Default select example">
+                                        <option selected>Seu nivel de conhecimento</option>
+                                            <option>Básico</option>
+                                            <option>Intermediário</option>
+                                            <option>Avançado</option>
+                                            <option>Certificado</option>
+                                            <option>Sem experiência</option>
+                                        </select>
+                            </div>
+                            <div class="input-div"> 
+                                <label>Protheus</label> 
+                                    <select class="form-select" aria-label="Default select example">
+                                        <option selected>Seu nivel de conhecimento</option>
+                                            <option>Básico</option>
+                                            <option>Intermediário</option>
+                                            <option>Avançado</option>
+                                            <option>Certificado</option>
+                                            <option>Sem experiência</option>
+                                        </select>
+                            </div>
+                            <div class="input-div"> 
+                                <label>Python </label> 
+                                    <select class="form-select" aria-label="Default select example">
+                                        <option selected>Seu nivel de conhecimento</option>
+                                            <option>Básico</option>
+                                            <option>Intermediário</option>
+                                            <option>Avançado</option>
+                                            <option>Certificado</option>
+                                            <option>Sem experiência</option>
+                                        </select>
+                            </div>
+                        </div>
+
+                        <div class="input-text">
+                            <div class="input-div"> 
+                                <label>Python</label> 
+                                    <select class="form-select" aria-label="Default select example">
+                                        <option selected>Seu nivel de conhecimento</option>
+                                            <option>Básico</option>
+                                            <option>Intermediário</option>
+                                            <option>Avançado</option>
+                                            <option>Certificado</option>
+                                            <option>Sem experiência</option>
+                                        </select>
+                            </div>       
+                            <div class="input-div"> 
+                                <label>Rabbitmqhp</label> 
+                                    <select class="form-select" aria-label="Default select example">
+                                        <option selected>Seu nivel de conhecimento</option>
+                                            <option>Básico</option>
+                                            <option>Intermediário</option>
+                                            <option>Avançado</option>
+                                            <option>Certificado</option>
+                                            <option>Sem experiência</option>
+                                        </select>
+                            </div>
+                            <div class="input-div"> 
+                                <label>React</label> 
+                                    <select class="form-select" aria-label="Default select example">
+                                        <option selected>Seu nivel de conhecimento</option>
+                                            <option>Básico</option>
+                                            <option>Intermediário</option>
+                                            <option>Avançado</option>
+                                            <option>Certificado</option>
+                                            <option>Sem experiência</option>
+                                        </select>
+                            </div>
+                            <div class="input-div"> 
+                                <label>ReactNative</label> 
+                                    <select class="form-select" aria-label="Default select example">
+                                        <option selected>Seu nivel de conhecimento</option>
+                                            <option>Básico</option>
+                                            <option>Intermediário</option>
+                                            <option>Avançado</option>
+                                            <option>Certificado</option>
+                                            <option>Sem experiência</option>
+                                        </select>
+                            </div>
+                        </div>
+
+
+                        <div class="input-text">
+                            <div class="input-div"> 
+                                <label>Redis</label> 
+                                    <select class="form-select" aria-label="Default select example">
+                                        <option selected>Seu nivel de conhecimento</option>
+                                            <option>Básico</option>
+                                            <option>Intermediário</option>
+                                            <option>Avançado</option>
+                                            <option>Certificado</option>
+                                            <option>Sem experiência</option>
+                                        </select>
+                            </div>       
+                            <div class="input-div"> 
+                                <label>RPA - Automation Anywhere</label> 
+                                    <select class="form-select" aria-label="Default select example">
+                                        <option selected>Seu nivel de conhecimento</option>
+                                            <option>Básico</option>
+                                            <option>Intermediário</option>
+                                            <option>Avançado</option>
+                                            <option>Certificado</option>
+                                            <option>Sem experiência</option>
+                                        </select>
+                            </div>
+                            <div class="input-div"> 
+                                <label>RPA - Blueprism</label> 
+                                    <select class="form-select" aria-label="Default select example">
+                                        <option selected>Seu nivel de conhecimento</option>
+                                            <option>Básico</option>
+                                            <option>Intermediário</option>
+                                            <option>Avançado</option>
+                                            <option>Certificado</option>
+                                            <option>Sem experiência</option>
+                                        </select>
+                            </div>
+                            <div class="input-div"> 
+                                <label> RPA - IBM</label> 
+                                    <select class="form-select" aria-label="Default select example">
+                                        <option selected>Seu nivel de conhecimento</option>
+                                            <option>Básico</option>
+                                            <option>Intermediário</option>
+                                            <option>Avançado</option>
+                                            <option>Certificado</option>
+                                            <option>Sem experiência</option>
+                                        </select>
+                            </div>
+                        </div>
+
+
+                        <div class="input-text">
+                            <div class="input-div"> 
+                                <label>RPA - Python </label> 
+                                    <select class="form-select" aria-label="Default select example">
+                                        <option selected>Seu nivel de conhecimento</option>
+                                            <option>Básico</option>
+                                            <option>Intermediário</option>
+                                            <option>Avançado</option>
+                                            <option>Certificado</option>
+                                            <option>Sem experiência</option>
+                                        </select>
+                            </div>       
+                            <div class="input-div"> 
+                                <label>RPA - Uipath</label> 
+                                    <select class="form-select" aria-label="Default select example">
+                                        <option selected>Seu nivel de conhecimento</option>
+                                            <option>Básico</option>
+                                            <option>Intermediário</option>
+                                            <option>Avançado</option>
+                                            <option>Certificado</option>
+                                            <option>Sem experiência</option>
+                                        </select>
+                            </div>
+                            <div class="input-div"> 
+                                <label>RPA - WDG Automation</label> 
+                                    <select class="form-select" aria-label="Default select example">
+                                        <option selected>Seu nivel de conhecimento</option>
+                                            <option>Básico</option>
+                                            <option>Intermediário</option>
+                                            <option>Avançado</option>
+                                            <option>Certificado</option>
+                                            <option>Sem experiência</option>
+                                        </select>
+                            </div>
+                            <div class="input-div"> 
+                                <label>RPA - Workfusion </label> 
+                                    <select class="form-select" aria-label="Default select example">
+                                        <option selected>Seu nivel de conhecimento</option>
+                                            <option>Básico</option>
+                                            <option>Intermediário</option>
+                                            <option>Avançado</option>
+                                            <option>Certificado</option>
+                                            <option>Sem experiência</option>
+                                        </select>
+                            </div>
+                        </div>
+
+                        <div class="input-text">
+                            <div class="input-div"> 
+                                <label>Scala</label> 
+                                    <select class="form-select" aria-label="Default select example">
+                                        <option selected>Seu nivel de conhecimento</option>
+                                            <option>Básico</option>
+                                            <option>Intermediário</option>
+                                            <option>Avançado</option>
+                                            <option>Certificado</option>
+                                            <option>Sem experiência</option>
+                                        </select>
+                            </div>       
+                            <div class="input-div"> 
+                                <label>SQL Server</label> 
+                                    <select class="form-select" aria-label="Default select example">
+                                        <option selected>Seu nivel de conhecimento</option>
+                                            <option>Básico</option>
+                                            <option>Intermediário</option>
+                                            <option>Avançado</option>
+                                            <option>Certificado</option>
+                                            <option>Sem experiência</option>
+                                        </select>
+                            </div>
+                            <div class="input-div"> 
+                                <label>Spring</label> 
+                                    <select class="form-select" aria-label="Default select example">
+                                        <option selected>Seu nivel de conhecimento</option>
+                                            <option>Básico</option>
+                                            <option>Intermediário</option>
+                                            <option>Avançado</option>
+                                            <option>Certificado</option>
+                                            <option>Sem experiência</option>
+                                        </select>
+                            </div>
+                            <div class="input-div"> 
+                                <label>Svelte</label> 
+                                    <select class="form-select" aria-label="Default select example">
+                                        <option selected>Seu nivel de conhecimento</option>
+                                            <option>Básico</option>
+                                            <option>Intermediário</option>
+                                            <option>Avançado</option>
+                                            <option>Certificado</option>
+                                            <option>Sem experiência</option>
+                                        </select>
+                            </div>
+                        </div>
+
+
+                        <div class="input-text">
+                            <div class="input-div"> 
+                                <label>Swift</label> 
+                                    <select class="form-select" aria-label="Default select example">
+                                        <option selected>Seu nivel de conhecimento</option>
+                                            <option>Básico</option>
+                                            <option>Intermediário</option>
+                                            <option>Avançado</option>
+                                            <option>Certificado</option>
+                                            <option>Sem experiência</option>
+                                        </select>
+                            </div>       
+                            <div class="input-div"> 
+                                <label>Terraform - IAC</label> 
+                                    <select class="form-select" aria-label="Default select example">
+                                        <option selected>Seu nivel de conhecimento</option>
+                                            <option>Básico</option>
+                                            <option>Intermediário</option>
+                                            <option>Avançado</option>
+                                            <option>Certificado</option>
+                                            <option>Sem experiência</option>
+                                        </select>
+                            </div>
+                            <div class="input-div"> 
+                                <label>Totvs</label> 
+                                    <select class="form-select" aria-label="Default select example">
+                                        <option selected>Seu nivel de conhecimento</option>
+                                            <option>Básico</option>
+                                            <option>Intermediário</option>
+                                            <option>Avançado</option>
+                                            <option>Certificado</option>
+                                            <option>Sem experiência</option>
+                                        </select>
+                            </div>
+                            <div class="input-div"> 
+                                <label>TypeScript</label> 
+                                    <select class="form-select" aria-label="Default select example">
+                                        <option selected>Seu nivel de conhecimento</option>
+                                            <option>Básico</option>
+                                            <option>Intermediário</option>
+                                            <option>Avançado</option>
+                                            <option>Certificado</option>
+                                            <option>Sem experiência</option>
+                                        </select>
+                            </div>
+                        </div>
+
+
+                        <div class="input-text">
+                            <div class="input-div"> 
+                                <label>VB.NET</label> 
+                                    <select class="form-select" aria-label="Default select example">
+                                        <option selected>Seu nivel de conhecimento</option>
+                                            <option>Básico</option>
+                                            <option>Intermediário</option>
+                                            <option>Avançado</option>
+                                            <option>Certificado</option>
+                                            <option>Sem experiência</option>
+                                        </select>
+                            </div>       
+                            <div class="input-div"> 
+                                <label>Visual Basic</label> 
+                                    <select class="form-select" aria-label="Default select example">
+                                        <option selected>Seu nivel de conhecimento</option>
+                                            <option>Básico</option>
+                                            <option>Intermediário</option>
+                                            <option>Avançado</option>
+                                            <option>Certificado</option>
+                                            <option>Sem experiência</option>
+                                        </select>
+                            </div>
+                            <div class="input-div"> 
+                                <label>Vue.Js</label> 
+                                    <select class="form-select" aria-label="Default select example">
+                                        <option selected>Seu nivel de conhecimento</option>
+                                            <option>Básico</option>
+                                            <option>Intermediário</option>
+                                            <option>Avançado</option>
+                                            <option>Certificado</option>
+                                            <option>Sem experiência</option>
+                                        </select>
+                            </div>
+                            <div class="input-div"> 
+                                <label>Zabbix - Monitoring</label> 
+                                    <select class="form-select" aria-label="Default select example">
+                                        <option selected>Seu nivel de conhecimento</option>
+                                            <option>Básico</option>
+                                            <option>Intermediário</option>
+                                            <option>Avançado</option>
+                                            <option>Certificado</option>
+                                            <option>Sem experiência</option>
+                                        </select>
+                            </div>
+                        </div>
+
+    
+                            <div class="buttons button_space">
+                                <button class="back_button">Anterior</button>
+                                <button class="next_button">Próximo</button>
+                            </div>
+                        </div>
+
+                <div class="main">
+                    <svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
+                         <circle class="checkmark__circle" cx="26" cy="26" r="25" fill="none"/>
+                        <path class="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
+                    </svg>
+                     
+                    <div class="text congrats">
+                        <h2>Parabéns!</h2>
+                        <p>Obrigado Sr./Sra. <span class="shown_name"></span> seu cadastro foi enviado com sucesso e entraremos em contato em breve.</p>
+                    </div>
+                </div>
+
+                
+            
+              
+
+            
+
+            </div>
+        </div>
+    </div>
+</div>
+                                <script type='text/javascript' src='#'></script>
+                                <script type='text/javascript' src='#'></script>
+                                <script type='text/javascript' src='#'></script>
+                                <script type='text/javascript' src='#'></script>
+                                <script type='text/javascript'>var next_click=document.querySelectorAll(".next_button");
+var main_form=document.querySelectorAll(".main");
+var step_list = document.querySelectorAll(".progress-bar li");
+var num = document.querySelector(".step-number");
+let formnumber=0;
+
+next_click.forEach(function(next_click_form){
+    next_click_form.addEventListener('click',function(){
+        var xx = document.getElementById('categoria').value;
+        if(xx==2 && formnumber == 0){
+            formnumber = 2;
+        }
+        else if(!validateform() || xx==0){
+            return false;
+        }
+        if( xx==2 && (formnumber == 3 || formnumber == 5)){
+            formnumber++;
+        }
+        else if( xx == 1 && (formnumber == 6)){
+            formnumber++;
+        }
+        formnumber++;
+        updateform();
+        progress_forward();
+        contentchange();
+       
+       
+    });
+}); 
+
+var back_click=document.querySelectorAll(".back_button");
+back_click.forEach(function(back_click_form){
+    back_click_form.addEventListener('click',function(){
+    var xx = document.getElementById('categoria').value;
+    if((xx == 1 && formnumber == 8) || (xx==2 && (formnumber==7 || formnumber == 6 || formnumber == 5))){
+        formnumber--;
+    }
+    if(xx == 2 && formnumber == 3){
+        formnumber = 1;
+    }
+       formnumber--;
+       updateform();
+       progress_backward();
+       contentchange();
+    });
+});
+
+var username=document.querySelector("#user_name");
+var shownname=document.querySelector(".shown_name");
+ 
+
+var submit_click=document.querySelectorAll(".submit_button");
+submit_click.forEach(function(submit_click_form){
+    submit_click_form.addEventListener('click',function(){
+       shownname.innerHTML= username.value;
+       formnumber++;
+       updateform(); 
+    });
+});
+
+var heart=document.querySelector(".fa-heart");
+heart.addEventListener('click',function(){
+   heart.classList.toggle('heart');
+});
+
+
+var share=document.querySelector(".fa-share-alt");
+share.addEventListener('click',function(){
+   share.classList.toggle('share');
+});
+
+
+
+
+
+
+function mascara(i){
+   
+    var v = i.value;
+    
+    if(isNaN(v[v.length-1])){ // impede entrar outro caractere que não seja número
+       i.value = v.substring(0, v.length-1);
+       return;
+    }
+    
+    i.setAttribute("maxlength", "14");
+    if (v.length == 3 || v.length == 7) i.value += ".";
+    if (v.length == 11) i.value += "-";
+ 
+ }
+
+ function formatarCampo(campoTexto) {
+    if (campoTexto.value.length <= 11) {
+        campoTexto.value = mascaraCpf(campoTexto.value);
+    } else {
+        campoTexto.value = mascaraCnpj(campoTexto.value);
+    }
+}
+function retirarFormatacao(campoTexto) {
+    campoTexto.value = campoTexto.value.replace(/(\.|\/|\-)/g,"");
+}
+
+function mascaraCnpj(valor) {
+    return valor.replace(/(\d{2})(\d{3})(\d{3})(\d{4})(\d{2})/g,"\$1.\$2.\$3\/\$4\-\$5");
+}
+
+
+function mascaraData(val) {
+  var pass = val.value;
+  var expr = /[0123456789]/;
+
+  for (i = 0; i < pass.length; i++) {
+    // charAt -> retorna o caractere posicionado no índice especificado
+    var lchar = val.value.charAt(i);
+    var nchar = val.value.charAt(i + 1);
+
+    if (i == 0) {
+      // search -> retorna um valor inteiro, indicando a posição do inicio da primeira
+      // ocorrência de expReg dentro de instStr. Se nenhuma ocorrencia for encontrada o método retornara -1
+      // instStr.search(expReg);
+      if ((lchar.search(expr) != 0) || (lchar > 3)) {
+        val.value = "";
+      }
+
+    } else if (i == 1) {
+
+      if (lchar.search(expr) != 0) {
+        // substring(indice1,indice2)
+        // indice1, indice2 -> será usado para delimitar a string
+        var tst1 = val.value.substring(0, (i));
+        val.value = tst1;
+        continue;
+      }
+
+      if ((nchar != '/') && (nchar != '')) {
+        var tst1 = val.value.substring(0, (i) + 1);
+
+        if (nchar.search(expr) != 0)
+          var tst2 = val.value.substring(i + 2, pass.length);
+        else
+          var tst2 = val.value.substring(i + 1, pass.length);
+
+        val.value = tst1 + '/' + tst2;
+      }
+
+    } else if (i == 4) {
+
+      if (lchar.search(expr) != 0) {
+        var tst1 = val.value.substring(0, (i));
+        val.value = tst1;
+        continue;
+      }
+
+      if ((nchar != '/') && (nchar != '')) {
+        var tst1 = val.value.substring(0, (i) + 1);
+
+        if (nchar.search(expr) != 0)
+          var tst2 = val.value.substring(i + 2, pass.length);
+        else
+          var tst2 = val.value.substring(i + 1, pass.length);
+
+        val.value = tst1 + '/' + tst2;
+      }
+    }
+
+    if (i >= 6) {
+      if (lchar.search(expr) != 0) {
+        var tst1 = val.value.substring(0, (i));
+        val.value = tst1;
+      }
+    }
+  }
+
+  if (pass.length > 10)
+    val.value = val.value.substring(0, 10);
+  return true;
+}
+
+
+function mask(o, f) {
+  setTimeout(function() {
+    var v = mphone(o.value);
+    if (v != o.value) {
+      o.value = v;
+    }
+  }, 1);
+}
+
+function mphone(v) {
+  var r = v.replace(/\D/g, "");
+  r = r.replace(/^0/, "");
+  if (r.length > 10) {
+    r = r.replace(/^(\d\d)(\d{5})(\d{4}).*/, "($1) $2-$3");
+  } else if (r.length > 5) {
+    r = r.replace(/^(\d\d)(\d{4})(\d{0,4}).*/, "($1) $2-$3");
+  } else if (r.length > 2) {
+    r = r.replace(/^(\d\d)(\d{0,5})/, "($1) $2");
+  } else {
+    r = r.replace(/^(\d*)/, "($1");
+  }
+  return r;
+}
+
+function updateform(){
+    main_form.forEach(function(mainform_number){
+        mainform_number.classList.remove('active');
+    });
+    main_form[formnumber].classList.add('active');
+} 
+ 
+function progress_forward(){
+    // step_list.forEach(list => {
+        
+    //     list.classList.remove('active');
+         
+    // }); 
+    var x = 0;
+    if (formnumber < 6){
+        x = 0;
+    }
+    else if (formnumber < 8){
+        x = 1;
+    }
+    else if (formnumber < 9){
+        x = 2;
+    }
+    else if (formnumber < 10){
+        x = 3;
+    }
+    
+    num.innerHTML = x+1;
+    step_list[x].classList.add('active');
+}  
+
+function progress_backward(){
+    var x = 0;
+    if (formnumber < 6){
+        x = 0;
+    }
+    else if (formnumber < 8){
+        x = 1;
+    }
+    else if (formnumber < 9){
+        x = 2;
+    }
+    else if (formnumber < 10){
+        x = 3;
+    }
+    
+    num.innerHTML = x+1;
+    step_list[x+1].classList.remove('active');
+} 
+ 
+
+
+
+
+function contentchange(){
+    var step_num_content=document.querySelectorAll(".step-number-content");
+    step_num_content.forEach(function(content){
+        content.classList.remove('active'); 
+        content.classList.add('d-none');
+    });
+    var x = 0;
+    if (formnumber < 6){
+        x = 0;
+    }
+    else if (formnumber < 8){
+        x = 1;
+    }
+    else if (formnumber < 9){
+        x = 2;
+    }
+    else if (formnumber < 10){
+        x = 3;
+    }
+    step_num_content[x].classList.remove('d-none');
+    step_num_content[x].classList.add('active');
+} 
+ 
+
+
+
+
+ 
+function validateform(){
+    validate=true;
+    var validate_inputs=document.querySelectorAll(".main.active input");
+    validate_inputs.forEach(function(vaildate_input){
+        vaildate_input.classList.remove('warning');
+        if(vaildate_input.hasAttribute('require')){
+            if(vaildate_input.value.length==0){
+                validate=false;
+                vaildate_input.classList.add('warning');
+            }
+        }
+    });
+    return validate;
+
+}</script>
+
+<script>
+    
+    function limpa_formulário_cep() {
+            //Limpa valores do formulário de cep.
+            document.getElementById('rua').value=("");
+            document.getElementById('bairro').value=("");
+            document.getElementById('cidade').value=("");
+            document.getElementById('uf').value=("");
+            document.getElementById('ibge').value=("");
+    }
+
+    function meu_callback(conteudo) {
+        if (!("erro" in conteudo)) {
+            //Atualiza os campos com os valores.
+            document.getElementById('rua').value=(conteudo.logradouro);
+            document.getElementById('bairro').value=(conteudo.bairro);
+            document.getElementById('cidade').value=(conteudo.localidade);
+            document.getElementById('uf').value=(conteudo.uf);
+        } //end if.
+        else {
+            //CEP não Encontrado.
+            limpa_formulário_cep();
+            alert("CEP não encontrado.");
+        }
+    }
+        
+    function pesquisacep(valor) {
+
+        //Nova variável "cep" somente com dígitos.
+        var cep = valor.replace(/\D/g, '');
+
+        //Verifica se campo cep possui valor informado.
+        if (cep != "") {
+
+            //Expressão regular para validar o CEP.
+            var validacep = /^[0-9]{8}$/;
+
+            //Valida o formato do CEP.
+            if(validacep.test(cep)) {
+
+                //Preenche os campos com "..." enquanto consulta webservice.
+                document.getElementById('rua').value="...";
+                document.getElementById('bairro').value="...";
+                document.getElementById('cidade').value="...";
+                document.getElementById('uf').value="...";
+
+                //Cria um elemento javascript.
+                var script = document.createElement('script');
+
+                //Sincroniza com o callback.
+                script.src = 'https://viacep.com.br/ws/'+ cep + '/json/?callback=meu_callback';
+
+                //Insere script no documento e carrega o conteúdo.
+                document.body.appendChild(script);
+
+            } //end if.
+            else {
+                //cep é inválido.
+                limpa_formulário_cep();
+                alert("Formato de CEP inválido.");
+            }
+        } //end if.
+        else {
+            //cep sem valor, limpa formulário.
+            limpa_formulário_cep();
+        }
+    };
+
+    </script>
+
+                                <script type='text/javascript'>var myLink = document.querySelector('a[href="#"]');
+                                myLink.addEventListener('click', function(e) {
+                                  e.preventDefault();
+                                });</script>
+                                
+                                
+
+                                    
+                                
+                                </body>
+                            </html>
